@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="home"
+            type="org.ibda.myguessgame.HomeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".HomeFragment"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="My Task"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/primarycolor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/newTaskTotal"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/primarycolor"
+                android:onClick='@{() -> home.goToNav("new") }'
+                android:text='@{"New \n" + home.newTaskTotal.toString()}'
+                android:textColor="@color/white"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/progressTaskTotal"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/primarycolor"
+                android:onClick='@{() -> home.goToNav("in progress") }'
+                android:text='@{"In Progress \n" + home.progressTaskTotal.toString()}'
+                android:textColor="@color/white"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/doneTaskTotal"
+            android:layout_width="150dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="25sp"
+            android:layout_marginBottom="10sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primarycolor"
+            android:onClick='@{() -> home.goToNav("done")}'
+            android:text='@{"Done \n" + home.doneTaskTotal.toString()}'
+            android:textColor="@color/white"
+            app:cornerRadius="10dp" />
+        
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="290dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/secondarycolor"
+            android:text="+Add"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</layout>
