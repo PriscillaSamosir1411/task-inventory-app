@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme enforcing light mode. -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/bkg</item>
+        <item name="colorPrimaryVariant">@color/bkg</item>
+        <!-- Add other customizations as needed -->
+    </style>
+</resources>

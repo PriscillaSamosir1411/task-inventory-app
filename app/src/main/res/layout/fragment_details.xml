@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="detailTask"
+            type="org.ibda.myguessgame.DetailsViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/titleDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text='@{"Title: " + detailTask.titleDetail.toString()}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Description TextView -->
+        <TextView
+            android:id="@+id/detailDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Description: " + detailTask.descriptionDetail.toString()}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/titleDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Category TextView -->
+        <TextView
+            android:id="@+id/categoryDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Category: " + detailTask.categoryDetail.toString()}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/detailDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Status TextView -->
+        <TextView
+            android:id="@+id/statusDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Status: " + detailTask.statusDetail.toString()}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/categoryDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Created Time TextView -->
+        <TextView
+            android:id="@+id/createdTimeDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Created Time: " + detailTask.createdTimeDetail.toString()}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/statusDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Finished Time TextView -->
+        <TextView
+            android:id="@+id/finishTimeDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Finished Time: " + detailTask.finishTimeDetail.toString()}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/createdTimeDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Duration TextView -->
+        <TextView
+            android:id="@+id/durationDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Duration: " + detailTask.durationDetail.toString() + "Minute"}'
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/finishTimeDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Action Button -->
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Take"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick='@{() -> detailTask.goBack()}'
+            android:backgroundTint="@color/secondarycolor"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

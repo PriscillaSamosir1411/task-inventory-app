@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_bottom_nav"
+    app:startDestination="@id/NormalFragment">
+
+    <fragment
+        android:id="@+id/NormalFragment"
+        android:name="org.ibda.myguessgame.NormalFragment"
+        android:label="fragment_normal"
+        tools:layout="@layout/fragment_normal">
+
+        <action
+            android:id="@+id/action_NormalFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment">
+            <argument
+                android:name="taskId"
+                app:argType="integer"/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ImportantFragment"
+        android:name="org.ibda.myguessgame.ImportantFragment"
+        android:label="fragment_important"
+        tools:layout="@layout/fragment_important">
+
+        <action
+            android:id="@+id/action_ImportantFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment">
+            <argument
+                android:name="taskId"
+                app:argType="integer"/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/UrgentFragment"
+        android:name="org.ibda.myguessgame.UrgentFragment"
+        android:label="fragment_urgent"
+        tools:layout="@layout/fragment_urgent">
+
+        <action
+            android:id="@+id/action_UrgentFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment">
+            <argument
+                android:name="taskId"
+                app:argType="integer"/>
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="org.ibda.myguessgame.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="taskId"
+            app:argType="integer"/>
+    </fragment>
+
+
+</navigation>
